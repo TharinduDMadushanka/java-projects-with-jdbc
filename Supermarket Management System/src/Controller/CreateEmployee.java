@@ -7,9 +7,5 @@ import Model.Option;
 
 import java.util.Scanner;
 
-public class CreateEmployee implements Option {
-    @Override
-    public void oper(Employee user, Scanner s, Database database) {
-
-    }
+public class CreateEmployee {
 }
