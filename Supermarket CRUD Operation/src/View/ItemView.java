@@ -17,6 +17,7 @@ public class ItemView extends JFrame {
      * Creates new form ItemView
      */
     public ItemView() throws Exception {
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         initComponents();
         itemController = new ItemController();
         loadTable();
