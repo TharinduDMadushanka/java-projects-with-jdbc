@@ -17,10 +17,11 @@ public class CustomerView extends JFrame {
      * Creates new form CustomerView
      */
     public CustomerView() throws Exception {
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         initComponents();
         customerController =new CustomerController();
         loadTable();
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
     }
 
     /**
