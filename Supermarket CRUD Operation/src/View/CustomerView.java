@@ -1,10 +1,11 @@
 package View;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CustomerView {
+public class CustomerView extends JFrame {
     private CustomerController customerController;
     /**
      * Creates new form CustomerView
