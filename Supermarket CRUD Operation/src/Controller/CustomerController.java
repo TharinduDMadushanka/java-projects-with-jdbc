@@ -1,6 +1,9 @@
 package Controller;
 
+import Dto.CustomerDto;
 import Model.CustomerModel;
+
+import java.util.ArrayList;
 
 public class CustomerController {
     private CustomerModel customerModel;
