@@ -1,7 +1,5 @@
 package Main;
 
-import View.CustomerView;
-import View.ItemView;
 import View.MainView;
 
 public class Main {
