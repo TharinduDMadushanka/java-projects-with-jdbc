@@ -20,7 +20,7 @@ public class MainView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    new ItemView();
+                    new ItemView().setVisible(true);
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
@@ -31,7 +31,7 @@ public class MainView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    new CustomerView();
+                    new CustomerView().setVisible(true);
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
                 }
