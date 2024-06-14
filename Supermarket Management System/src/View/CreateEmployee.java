@@ -1,4 +1,7 @@
 package View;
 
-public class CreateEmployee {
+import Model.Option;
+
+
+public class CreateEmployee implements Option {
 }
