@@ -1,7 +1,11 @@
 package View;
 
+import Controller.CustomerController;
+import Dto.CustomerDto;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
