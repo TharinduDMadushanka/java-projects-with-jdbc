@@ -2,6 +2,7 @@ package Main;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        new ItemView().setVisible(true);
+        new CustomerView().setVisible(true);
     }
 }
