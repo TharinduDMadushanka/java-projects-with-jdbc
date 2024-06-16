@@ -9,6 +9,7 @@ import Dto.StudentDto;
 import javax.swing.JOptionPane;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -246,5 +247,24 @@ public class MainFrame extends javax.swing.JFrame {
         txtName.setText("");
         txtAge.setText("");
         txtGrade.setText("");
+    }
+    
+    private void loadTable(){
+    
+        try {
+            
+            String [] columns={"name","age","grade"};
+            DefaultTableModel dtm =new DefaultTableModel(columns,0){
+            
+              @Override
+                public boolean isCellEditable(int row, int column){ // table rows editable disconnect
+                    return false;
+                }  
+            };
+            table1.setModel(dtm);
+            
+        } catch (Exception e) {
+        }
+        
     }
 }
