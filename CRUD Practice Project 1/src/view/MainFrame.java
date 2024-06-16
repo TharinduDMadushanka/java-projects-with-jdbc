@@ -8,6 +8,7 @@ import Controller.StudentController;
 import Dto.StudentDto;
 import javax.swing.JOptionPane;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 /**
  *
@@ -44,7 +45,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         txtAge = new javax.swing.JTextField();
-        gradeBox = new javax.swing.JComboBox<>();
+        txtGrade = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         btnInsert = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
@@ -85,14 +86,16 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3.setText("Grade");
         jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
+        txtName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtName.setToolTipText("Enter Your Name");
         jPanel4.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 230, 30));
 
+        txtAge.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtAge.setToolTipText("Enter Your Age");
         jPanel4.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 70, 30));
 
-        gradeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13" }));
-        jPanel4.add(gradeBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 70, -1));
+        txtGrade.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel4.add(txtGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 70, 30));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 390, 260));
 
@@ -197,7 +200,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JComboBox<String> gradeBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -209,6 +211,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable table1;
     private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtGrade;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
@@ -217,12 +220,12 @@ public class MainFrame extends javax.swing.JFrame {
     
         try {
             
-            StudentDto dto= new StudentDto(txtName.getText(),Integer.parseInt(txtAge.getText()),gradeBox.getSelectedIndex());
+            StudentDto dto= new StudentDto(txtName.getText(),Integer.parseInt(txtAge.getText()),Integer.parseInt(txtGrade.getText()));
             String resp= studentController.saveStudent(dto);
             JOptionPane.showMessageDialog(this, resp);
             
-        } catch (Exception e) {
-//            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Error at save Data.");
         }
         

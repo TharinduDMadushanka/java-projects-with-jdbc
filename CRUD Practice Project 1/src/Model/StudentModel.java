@@ -24,7 +24,7 @@ public class StudentModel {
     
     public String saveStudent(StudentDto studentDto) throws Exception{
     
-        String sql="INSERT INTO student VALUE (?,?,?) ";
+        String sql = "INSERT INTO student (name, age, grade) VALUES (?, ?, ?)";
         
          PreparedStatement statement = connection.prepareStatement(sql);
          statement.setString(1,studentDto.getName());
