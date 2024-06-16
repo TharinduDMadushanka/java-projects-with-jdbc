@@ -76,6 +76,7 @@ public class Login extends javax.swing.JFrame {
         
         MainFrame mainFrame=new MainFrame();
         mainFrame.setVisible(true);
+        this.dispose(); // when main frame log then hide login form
         
     }//GEN-LAST:event_btnLoginActionPerformed
 
