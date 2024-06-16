@@ -74,9 +74,23 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         
-        MainFrame mainFrame=new MainFrame();
-        mainFrame.setVisible(true);
-        this.dispose(); // when main frame log then hide login form
+        String userName;
+        String password;
+        
+        userName=txtUserName.getText();
+        password=txtPassword.getText();
+        
+        if(userName.equals("Tharindu") && password.equals("Thariya920@")){
+        
+            MainFrame mainFrame=new MainFrame();
+            mainFrame.setVisible(true);
+            this.dispose(); // when main frame log then hide login form
+        }else{
+        
+            System.out.println("Invalid User name or Password");
+        }
+        
+        
         
     }//GEN-LAST:event_btnLoginActionPerformed
 
