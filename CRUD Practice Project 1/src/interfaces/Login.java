@@ -75,6 +75,7 @@ public class Login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         
         MainFrame mainFrame=new MainFrame();
+        mainFrame.setVisible(true);
         
     }//GEN-LAST:event_btnLoginActionPerformed
 
