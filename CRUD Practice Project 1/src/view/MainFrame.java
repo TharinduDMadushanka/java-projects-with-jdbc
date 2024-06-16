@@ -7,6 +7,7 @@ package view;
 import Controller.StudentController;
 import Dto.StudentDto;
 import javax.swing.JOptionPane;
+import java.util.logging.Logger;
 
 /**
  *
@@ -221,6 +222,8 @@ public class MainFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, resp);
             
         } catch (Exception e) {
+//            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error at save Data.");
         }
         
     }
