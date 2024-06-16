@@ -110,7 +110,7 @@ public class MainFrame extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 0, 0));
         btnExit.setText("Exit");
-        jPanel5.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
+        jPanel5.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 390, 110));
 
