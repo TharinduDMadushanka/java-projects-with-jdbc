@@ -4,19 +4,24 @@
  */
 package view;
 
+import Controller.StudentController;
 import Dto.StudentDto;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author ASUS
  */
 public class MainFrame extends javax.swing.JFrame {
+    
+    private StudentController studentController;
 
     /**
      * Creates new form ManiFrame
      */
-    public MainFrame() {
+    public MainFrame() throws Exception {
         initComponents();
+        studentController=new StudentController();
     }
 
     /**
@@ -212,6 +217,8 @@ public class MainFrame extends javax.swing.JFrame {
         try {
             
             StudentDto dto= new StudentDto(txtName.getText(),Integer.parseInt(txtAge.getText()),gradeBox.getSelectedIndex());
+            String resp= studentController.saveStudent(dto);
+            JOptionPane.showMessageDialog(this, resp);
             
         } catch (Exception e) {
         }
