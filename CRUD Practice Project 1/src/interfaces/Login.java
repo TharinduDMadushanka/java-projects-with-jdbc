@@ -83,7 +83,7 @@ public class Login extends javax.swing.JFrame {
         userName=txtUserName.getText();
         password=txtPassword.getText();
         
-        if(userName.equals("Tharindu") && password.equals("Thariya920@")){
+        if(userName.equals("Tharindu") && password.equals("123")){
         
             MainFrame mainFrame=new MainFrame();
             mainFrame.setVisible(true);
