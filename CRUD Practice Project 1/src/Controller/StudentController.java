@@ -6,6 +6,7 @@ package Controller;
 
 import Dto.StudentDto;
 import Model.StudentModel;
+import java.util.ArrayList;
 
 /**
  *
@@ -26,4 +27,9 @@ public class StudentController {
         return  resp;
     }
     
+    public ArrayList<StudentDto> getAllStudent() throws Exception{
+    
+        ArrayList<StudentDto> studentDtos= studentModel.getAllStudent();
+        return studentDtos;
+    }
 }
