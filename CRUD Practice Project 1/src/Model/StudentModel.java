@@ -4,9 +4,11 @@
  */
 package Model;
 
+import Dto.StudentDto;
 import db.DBConnection;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
 /**
  *
  * @author ASUS
@@ -18,5 +20,16 @@ public class StudentModel {
     public StudentModel() throws SQLException, ClassNotFoundException{
     
         this.connection=DBConnection.getInstance().getConnection();
+    }
+    
+    public void saveStudent(StudentDto studentDto) throws Exception{
+    
+        String sql="INSERT INTO student VALUE (?,?,?) ";
+        
+         PreparedStatement statement = connection.prepareStatement(sql);
+         statement.setString(1,studentDto.getName());
+         statement.setInt(2,studentDto.getAge());
+         statement.setInt(3,studentDto.getGrade());
+        
     }
 }
