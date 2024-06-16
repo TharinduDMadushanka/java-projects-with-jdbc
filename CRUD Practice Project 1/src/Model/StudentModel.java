@@ -53,6 +53,21 @@ public class StudentModel {
         return studentDtos;
     }
     
+    public StudentDto getStudent(String studentName) throws Exception{
+    
+        String sql="SELECT * FROM student WHERE name = ?";
+        PreparedStatement statement=connection.prepareStatement(sql);
+        statement.setString(1, studentName);
+        ResultSet rst= statement.executeQuery();
+        
+        while(rst.next()){
+        
+            StudentDto dto = new StudentDto(rst.getString("name"),rst.getInt("age"),rst.getInt("grade"));
+            return dto;
+        }
+        return null;
+    }
+    
 //    public String deleteStudent(){
 //    
 //        String sql ="DELETE FROM student WHERE id = ?";
