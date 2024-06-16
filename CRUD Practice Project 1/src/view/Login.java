@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -85,9 +87,13 @@ public class Login extends javax.swing.JFrame {
         
         if(userName.equals("Tharindu") && password.equals("123")){
         
-            MainFrame mainFrame=new MainFrame();
-            mainFrame.setVisible(true);
-            this.dispose(); // when main frame log then hide login form
+            try {
+                MainFrame mainFrame=new MainFrame();
+                mainFrame.setVisible(true);
+                this.dispose(); // when main frame log then hide login form
+            } catch (Exception ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }else{
         
             JOptionPane.showMessageDialog(this, "Invalid User name or Password");
