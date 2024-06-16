@@ -32,4 +32,10 @@ public class StudentController {
         ArrayList<StudentDto> studentDtos= studentModel.getAllStudent();
         return studentDtos;
     }
+    
+    public StudentDto searchStudent(String studentName) throws Exception{
+    
+        StudentDto studentDto = studentModel.getStudent(studentName);
+        return studentDto;
+    }
 }
