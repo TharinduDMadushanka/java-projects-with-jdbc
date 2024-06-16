@@ -39,7 +39,7 @@ public class StudentModel {
     
     public ArrayList<StudentDto> getAllStudent() throws  Exception{
     
-        String sql="GET * FROM student";       
+        String sql="SELECT * FROM student";       
         PreparedStatement statement=connection.prepareStatement(sql);
         ResultSet rst= statement.executeQuery();
         
