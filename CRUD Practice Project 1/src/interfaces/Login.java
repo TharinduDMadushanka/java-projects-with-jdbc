@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
@@ -87,7 +89,7 @@ public class Login extends javax.swing.JFrame {
             this.dispose(); // when main frame log then hide login form
         }else{
         
-            System.out.println("Invalid User name or Password");
+            JOptionPane.showMessageDialog(this, "Invalid User name or Password");
         }
         
         
