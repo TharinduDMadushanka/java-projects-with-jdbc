@@ -33,4 +33,12 @@ public class StudentModel {
         
          return statement.executeUpdate() >0 ? "Success" : "Fail";
     }
+    
+//    public String deleteStudent(){
+//    
+//        String sql ="DELETE FROM student WHERE id = ?";
+//        PreparedStatement statement= connection.prepareStatement(sql);
+//        statement.setInt(1,id );
+//        
+//    }
 }
