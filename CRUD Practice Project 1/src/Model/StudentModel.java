@@ -22,7 +22,7 @@ public class StudentModel {
         this.connection=DBConnection.getInstance().getConnection();
     }
     
-    public void saveStudent(StudentDto studentDto) throws Exception{
+    public String saveStudent(StudentDto studentDto) throws Exception{
     
         String sql="INSERT INTO student VALUE (?,?,?) ";
         
@@ -31,5 +31,6 @@ public class StudentModel {
          statement.setInt(2,studentDto.getAge());
          statement.setInt(3,studentDto.getGrade());
         
+         return statement.executeUpdate() >0 ? "Success" : "Fail";
     }
 }

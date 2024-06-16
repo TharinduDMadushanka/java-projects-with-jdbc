@@ -4,6 +4,8 @@
  */
 package view;
 
+import Dto.StudentDto;
+
 /**
  *
  * @author ASUS
@@ -93,6 +95,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         btnInsert.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnInsert.setText("Insert");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
         jPanel5.add(btnInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -136,6 +143,11 @@ public class MainFrame extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(855, 557));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        // TODO add your handling code here:
+        saveStudent();
+    }//GEN-LAST:event_btnInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,4 +206,16 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+
+    private void saveStudent(){
+    
+        try {
+            
+            StudentDto dto= new StudentDto(txtName.getText(),Integer.parseInt(txtAge.getText()),gradeBox.getSelectedIndex());
+            
+        } catch (Exception e) {
+        }
+        
+    }
+    
 }
