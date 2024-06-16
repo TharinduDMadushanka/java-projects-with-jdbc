@@ -301,6 +301,7 @@ public class MainFrame extends javax.swing.JFrame {
                 txtName.setText(dto.getName());
                 txtAge.setText(Integer.toString(dto.getAge()));
                 txtGrade.setText(Integer.toString(dto.getGrade()));
+                txtSearch.setText(dto.getName()+" | Grade :"+Integer.toString(dto.getGrade()));
             }else{
             
                 JOptionPane.showMessageDialog(this, "Student Not Found !");
