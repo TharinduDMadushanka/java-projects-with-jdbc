@@ -256,7 +256,7 @@ public class MainFrame extends javax.swing.JFrame {
     
         try {
             
-            String [] columns={"name","age","grade"};
+            String [] columns={"Name","Age","Grade"};
             DefaultTableModel dtm =new DefaultTableModel(columns,0){
             
               @Override
