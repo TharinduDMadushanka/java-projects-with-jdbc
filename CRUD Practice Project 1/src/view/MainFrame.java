@@ -276,6 +276,24 @@ public class MainFrame extends javax.swing.JFrame {
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error at Loading Data !");
+        }       
+    }
+    
+    private void searchStudent(){
+    
+        try {
+            
+            String studentName=table1.getValueAt(table1.getSelectedRow(), 0).toString();
+            StudentDto dto=studentController.searchStudent(studentName);
+            
+            if(dto!=null){
+            
+                txtName.setText(dto.getName());
+                txtAge.setText(Integer.toString(dto.getAge()));
+                txtAge.setText(Integer.toString(dto.getGrade()));
+            }
+            
+        } catch (Exception e) {
         }
         
     }
