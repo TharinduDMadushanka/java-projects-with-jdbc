@@ -26,6 +26,7 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() throws Exception {
         initComponents();
         studentController=new StudentController();
+        loadTable();
     }
 
     /**
@@ -235,6 +236,7 @@ public class MainFrame extends javax.swing.JFrame {
             StudentDto dto= new StudentDto(txtName.getText(),Integer.parseInt(txtAge.getText()),Integer.parseInt(txtGrade.getText()));
             String resp= studentController.saveStudent(dto);
             JOptionPane.showMessageDialog(this, resp);
+            loadTable();
             
         } catch (Exception ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
