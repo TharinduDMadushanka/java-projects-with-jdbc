@@ -6,6 +6,7 @@ package view;
 
 import Controller.StudentController;
 import Dto.StudentDto;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -263,7 +264,16 @@ public class MainFrame extends javax.swing.JFrame {
             };
             table1.setModel(dtm);
             
+            ArrayList<StudentDto> studentDtos=studentController.getAllStudent();
+            
+            for(StudentDto dto : studentDtos){
+            
+                Object [] rowData= {dto.getName(),dto.getAge(),dto.getGrade()};
+                dtm.addRow(rowData);
+            }
+            
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error at Loading Data !");
         }
         
     }
