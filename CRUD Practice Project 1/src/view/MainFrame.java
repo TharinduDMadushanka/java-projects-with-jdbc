@@ -291,9 +291,13 @@ public class MainFrame extends javax.swing.JFrame {
                 txtName.setText(dto.getName());
                 txtAge.setText(Integer.toString(dto.getAge()));
                 txtAge.setText(Integer.toString(dto.getGrade()));
+            }else{
+            
+                JOptionPane.showMessageDialog(this, "Student Not Found !");
             }
             
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error at searching !");
         }
         
     }
