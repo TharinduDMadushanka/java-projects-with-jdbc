@@ -71,7 +71,8 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
-        pack();
+        setSize(new java.awt.Dimension(414, 307));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -90,10 +91,7 @@ public class Login extends javax.swing.JFrame {
         }else{
         
             JOptionPane.showMessageDialog(this, "Invalid User name or Password");
-        }
-        
-        
-        
+        }                 
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
