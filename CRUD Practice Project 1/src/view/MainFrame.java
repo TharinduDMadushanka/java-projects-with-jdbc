@@ -121,6 +121,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
         jPanel5.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
         btnExit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -157,6 +162,11 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         saveStudent();
     }//GEN-LAST:event_btnInsertActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        clearForm();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,4 +241,10 @@ public class MainFrame extends javax.swing.JFrame {
         
     }
     
+    private void clearForm(){
+    
+        txtName.setText("");
+        txtAge.setText("");
+        txtGrade.setText("");
+    }
 }
