@@ -44,4 +44,10 @@ public class StudentController {
         String resp =studentModel.deleteStudent(name);
         return resp;
     }
+    
+    public String updateStudent(StudentDto studentDto)throws  Exception{
+    
+        String resp=studentModel.updateStudent(studentDto);
+        return resp;          
+    }
 }
