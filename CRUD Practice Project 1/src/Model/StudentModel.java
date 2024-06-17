@@ -79,7 +79,7 @@ public class StudentModel {
     
     public String updateStudent(StudentDto studentDto)throws Exception{
     
-        String sql ="UPDATE student SET age=? grade=? WHERE name=?";
+        String sql = "UPDATE student SET age = ?, grade = ? WHERE name = ?";
         PreparedStatement statement=connection.prepareStatement(sql);
         
         statement.setInt(1, studentDto.getAge());
