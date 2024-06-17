@@ -122,6 +122,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
         jPanel5.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
 
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -201,6 +206,15 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         deleteStudent();
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        try {
+            // TODO add your handling code here:
+            updateStudent();
+        } catch (Exception ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,6 +364,19 @@ public class MainFrame extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Error at delete Student.");
+        }       
+    }
+    
+    private void updateStudent()throws Exception{
+    
+        try {
+            StudentDto dto= new StudentDto(txtName.getText(),Integer.parseInt(txtAge.getText()),Integer.parseInt(txtGrade.getText()));
+            String resp =studentController.updateStudent(dto);
+            JOptionPane.showMessageDialog(this, resp);
+            loadTable();
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error at update Student");
         }       
     }
 }
