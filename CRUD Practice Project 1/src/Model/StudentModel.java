@@ -77,9 +77,13 @@ public class StudentModel {
         return statement.executeUpdate() >0 ? "Success" : "Fail";
     }
     
-//    public String updateStudent()throws Exception{
-//    
-//        
-//        
-//    }
+    public String updateStudent(StudentDto studentDto)throws Exception{
+    
+        String sql ="UPDATE student SET age=? grade=? WHERE name=?";
+        PreparedStatement statement=connection.prepareStatement(sql);
+        
+        statement.setInt(1, studentDto.getAge());
+        statement.setInt(2, studentDto.getGrade());
+        statement.setString(3, studentDto.getName());
+    }
 }
