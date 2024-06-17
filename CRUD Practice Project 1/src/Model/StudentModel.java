@@ -70,7 +70,7 @@ public class StudentModel {
     
     public String deleteStudent(String name)throws  Exception{
     
-        String sql ="DELETE FROM student WHERE nsme = ?";
+        String sql ="DELETE FROM student WHERE name = ?";
         PreparedStatement statement= connection.prepareStatement(sql);
         statement.setString(1,name );
         
