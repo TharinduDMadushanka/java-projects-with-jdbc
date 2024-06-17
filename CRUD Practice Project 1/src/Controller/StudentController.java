@@ -39,9 +39,9 @@ public class StudentController {
         return studentDto;
     }
     
-    public String deleteStudent(int id)throws Exception{
+    public String deleteStudent(String name)throws Exception{
     
-        String resp =studentModel.deleteStudent(id);
+        String resp =studentModel.deleteStudent(name);
         return resp;
     }
 }
