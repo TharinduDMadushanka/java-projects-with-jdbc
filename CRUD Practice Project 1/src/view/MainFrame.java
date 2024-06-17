@@ -126,6 +126,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
         jPanel5.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -191,6 +196,11 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         clearForm();
     }//GEN-LAST:event_txtSearchActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        deleteStudent();
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,6 +330,24 @@ public class MainFrame extends javax.swing.JFrame {
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error at searching !");
+        }        
+    }
+    
+    private void deleteStudent(){
+    
+        try {
+            
+            String name = txtName.getText();
+            if(name.isEmpty()){           
+                JOptionPane.showMessageDialog(this, "Please enter correct name.");
+                return;
+            }
+            
+            String resp =studentController.deleteStudent(name);
+            JOptionPane.showMessageDialog(this, resp);
+            loadTable();
+            
+        } catch (Exception e) {
         }
         
     }
