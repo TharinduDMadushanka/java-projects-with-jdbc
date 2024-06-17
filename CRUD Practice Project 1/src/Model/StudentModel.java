@@ -68,11 +68,11 @@ public class StudentModel {
         return null;
     }
     
-    public String deleteStudent(int id)throws  Exception{
+    public String deleteStudent(String name)throws  Exception{
     
-        String sql ="DELETE FROM student WHERE id = ?";
+        String sql ="DELETE FROM student WHERE nsme = ?";
         PreparedStatement statement= connection.prepareStatement(sql);
-        statement.setInt(1,id );
+        statement.setString(1,name );
         
         return statement.executeUpdate() >0 ? "Success" : "Fail";
     }
