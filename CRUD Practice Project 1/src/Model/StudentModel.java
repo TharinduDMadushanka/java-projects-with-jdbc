@@ -85,5 +85,7 @@ public class StudentModel {
         statement.setInt(1, studentDto.getAge());
         statement.setInt(2, studentDto.getGrade());
         statement.setString(3, studentDto.getName());
+        
+        return statement.executeUpdate()>0 ? "Success":"Fail";
     }
 }
