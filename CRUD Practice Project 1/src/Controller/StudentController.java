@@ -38,4 +38,10 @@ public class StudentController {
         StudentDto studentDto = studentModel.getStudent(studentName);
         return studentDto;
     }
+    
+    public String deleteStudent(int id)throws Exception{
+    
+        String resp =studentModel.deleteStudent(id);
+        return resp;
+    }
 }
