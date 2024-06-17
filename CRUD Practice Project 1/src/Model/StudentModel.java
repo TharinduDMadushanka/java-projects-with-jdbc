@@ -76,4 +76,10 @@ public class StudentModel {
         
         return statement.executeUpdate() >0 ? "Success" : "Fail";
     }
+    
+//    public String updateStudent()throws Exception{
+//    
+//        
+//        
+//    }
 }

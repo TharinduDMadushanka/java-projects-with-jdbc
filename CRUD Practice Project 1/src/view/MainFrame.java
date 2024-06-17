@@ -347,7 +347,9 @@ public class MainFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, resp);
             loadTable();
             
-        } catch (Exception e) {
+        } catch (Exception ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error at delete Student.");
         }       
     }
 }
