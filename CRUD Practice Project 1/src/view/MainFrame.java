@@ -150,6 +150,11 @@ public class MainFrame extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 0, 0));
         btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
         jPanel5.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 390, 110));
@@ -215,6 +220,11 @@ public class MainFrame extends javax.swing.JFrame {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,6 +302,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void clearForm(){
     
+        txtSearch.setText("");
         txtName.setText("");
         txtAge.setText("");
         txtGrade.setText("");
