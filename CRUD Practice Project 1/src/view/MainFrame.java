@@ -348,7 +348,6 @@ public class MainFrame extends javax.swing.JFrame {
             loadTable();
             
         } catch (Exception e) {
-        }
-        
+        }       
     }
 }
