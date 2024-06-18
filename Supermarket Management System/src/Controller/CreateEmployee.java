@@ -12,7 +12,7 @@ public class CreateEmployee {
     public CreateEmployee(Employee e , Database database) throws SQLException, ClassNotFoundException {
         this.connection=Database.getInstance().getConnection();
 
-        String insert = "INSERT INTO employees (first_name, last_name, email, phone_number, address, salary, department, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String insert = "INSERT INTO employees (FirstName, LastName, Email, PhoneNumber, Address, Salary, Department, Password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         PreparedStatement statement =connection.prepareStatement(insert);
         statement.setString(1, e.getFirstName());
