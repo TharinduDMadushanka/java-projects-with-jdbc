@@ -4,21 +4,22 @@ import java.sql.*;
 
 public class Database {
 
-    private String user="root";
-    private String pass="Thariya920@";
-    private String url="jdbc:mysql://localhost:3306/market";
-    private Statement statement;
+    private static Database dBConnection;
+    private Connection connection;
 
-    public Database(){
-        try{
-            Connection connection= DriverManager.getConnection(url,user,pass);
-            statement=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
+    private Database() throws ClassNotFoundException, SQLException{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Supermarket", "root", "Thariya920@");
     }
-    public Statement getStatement(){
-        return statement;
+
+    public static Database getInstance() throws ClassNotFoundException, SQLException{
+        if(dBConnection == null){
+            dBConnection = new Database();
+        }
+        return dBConnection;
+    }
+
+    public Connection getConnection(){
+        return connection;
     }
 }
