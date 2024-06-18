@@ -27,6 +27,8 @@ public class CreateEmployee {
         try{
             statement.executeUpdate();
             System.out.println("Employee added successfully");
+        }catch (Exception ex){
+            ex.printStackTrace();
         }
     }
 }
