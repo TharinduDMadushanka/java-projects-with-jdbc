@@ -18,4 +18,7 @@ public class Storekeeper extends Employee{
         this.option=new Option[] {};
 
     }
+    public int getDepartment() {
+        return 2;
+    }
 }

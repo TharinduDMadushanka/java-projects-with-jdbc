@@ -17,4 +17,9 @@ public class Admin extends Employee{
         this.option=new Option[] {};
 
     }
+
+    @Override
+    public int getDepartment() {
+        return 0;
+    }
 }

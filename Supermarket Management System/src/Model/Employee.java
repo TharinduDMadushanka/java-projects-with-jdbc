@@ -88,4 +88,8 @@ public abstract class Employee {
     public void setPassword(String password){
         this.password = password;
     }
+    public abstract int getDepartment();
+    // 0 -- Admin
+    // 1 -- Cashier
+    // 2 -- Storekeeper
 }
