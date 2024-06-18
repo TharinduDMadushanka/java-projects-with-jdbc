@@ -23,5 +23,10 @@ public class CreateEmployee {
         statement.setDouble(6, e.getSalary());
         statement.setInt(7,e.getDepartment());
         statement.setString(8, e.getPassword());
+
+        try{
+            statement.executeUpdate();
+            System.out.println("Employee added successfully");
+        }
     }
 }
