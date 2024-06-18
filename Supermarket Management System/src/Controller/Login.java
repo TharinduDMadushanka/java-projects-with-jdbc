@@ -12,4 +12,12 @@ public class Login {
         this.password = password;
         this.employee = employee;
     }
+
+    public boolean isLogged(){
+        return false;
+    }
+
+    public Employee getUser() {
+        return employee;
+    }
 }
