@@ -7,7 +7,7 @@ public class CreateEmployee {
 
     public CreateEmployee(Employee e , Database database) {
 
-        String insert="INSERT INTO employee VALUES(?,?,?,?,?,?,?,?)";
+        String insert="INSERT INTO employees VALUES(?,?,?,?,?,?,?,?)";
 
     }
 }
