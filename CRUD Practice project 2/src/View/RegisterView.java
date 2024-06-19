@@ -206,6 +206,7 @@ public class RegisterView extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new AddView().setVisible(true);
     }
 
     /**
