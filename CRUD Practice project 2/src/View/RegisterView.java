@@ -188,6 +188,11 @@ public class RegisterView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        new SignView().setVisible(true);
+    }
+
     /**
      * @param args the command line arguments
      */
