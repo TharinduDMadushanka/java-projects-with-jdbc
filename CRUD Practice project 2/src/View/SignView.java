@@ -96,8 +96,8 @@ public class SignView extends javax.swing.JFrame {
                                                                 .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(30, 30, 30)
-                                                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(105, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -132,7 +132,8 @@ public class SignView extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(519, 398));
+        setLocationRelativeTo(null);
     }// </editor-fold>
 
     private void bntLogActionPerformed(java.awt.event.ActionEvent evt) {
