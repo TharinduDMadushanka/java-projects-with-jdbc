@@ -142,6 +142,7 @@ public class SignView extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new RegisterView().setVisible(true);
     }
 
     /**
