@@ -8,9 +8,12 @@ import Controller.CustomerController;
 import Controller.ItemController;
 import Dto.CustomerDto;
 import Dto.ItemDto;
+import Dto.OrderDetailDto;
+import Dto.OrderDto;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,14 +23,16 @@ public class OrderView extends javax.swing.JFrame {
 
     private ItemController itemController;
     private CustomerController customerController;
+    private ArrayList<OrderDetailDto> orderDetailDtos;
     /**
      * Creates new form OrderView
      */
     public OrderView() throws Exception {
-        initComponents();
         itemController=new ItemController();
         customerController=new CustomerController();
+        orderDetailDtos=new ArrayList<>();
         loadTable();
+        initComponents();
     }
 
     /**
@@ -272,14 +277,17 @@ public class OrderView extends javax.swing.JFrame {
 
     private void btnQtyAddActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        addTable();
     }
 
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+
     }
 
     private void tableDetailsMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
+
     }
 
     /**
@@ -385,5 +393,16 @@ public class OrderView extends javax.swing.JFrame {
             }
         };
         tableDetails.setModel(dtm);
+    }
+
+    private void addTable(){
+        OrderDetailDto orderDetailDto=new OrderDetailDto(null,txtItemId.getText(),Integer.parseInt(txtQty.getText()),
+                Integer.parseInt(txtDiscount.getText()));
+
+        orderDetailDtos.add(orderDetailDto);
+
+        Object[] rowDat={orderDetailDto.getItemCode(),orderDetailDto.getQty(),orderDetailDto.getDiscount()};
+        DefaultTableModel dtm=(DefaultTableModel)tableDetails.getModel();
+        dtm.addRow(rowDat);
     }
 }
