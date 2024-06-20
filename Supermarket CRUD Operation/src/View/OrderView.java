@@ -405,6 +405,13 @@ public class OrderView extends javax.swing.JFrame {
         Object[] rowDat={orderDetailDto.getItemCode(),orderDetailDto.getQty(),orderDetailDto.getDiscount()};
         DefaultTableModel dtm=(DefaultTableModel)tableDetails.getModel();
         dtm.addRow(rowDat);
+        cleanItem();
     }
 
+    private void cleanItem(){
+        txtItemId.setText("");
+        txtQty.setText("");
+        txtDiscount.setText("");
+        lblItemDetails.setText("");
+    }
 }
