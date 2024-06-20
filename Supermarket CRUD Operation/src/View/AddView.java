@@ -85,12 +85,13 @@ public class AddView extends javax.swing.JFrame {
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
         // TODO add your handling code here:
         new CustomerView().setVisible(true);
+        this.dispose();
     }
 
     private void btnItem1ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
         // TODO add your handling code here:
         new ItemView().setVisible(true);
-
+        this.dispose();
     }
 
     /**
