@@ -105,7 +105,11 @@ public class MainView extends javax.swing.JFrame {
 
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        new OrderView().setVisible(true);
+        try {
+            new OrderView().setVisible(true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
