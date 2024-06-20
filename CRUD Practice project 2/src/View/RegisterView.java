@@ -4,6 +4,8 @@
  */
 package View;
 
+import Dto.RegisterDto;
+
 /**
  *
  * @author ASUS
@@ -268,6 +270,11 @@ public class RegisterView extends javax.swing.JFrame {
     // End of variables declaration
 
     private void saveStudent(){
+
+        try{
+            RegisterDto dto = new RegisterDto(txtFirstName.getText(),txtLastName.getText(),txtId.getText(),txtGrade.getText(),
+                    Integer.parseInt(txtAge.getText()),txtDistrict.getText(),txtProvince.getText(),txtPhoneNb.getText());
+        }
 
     }
 }
