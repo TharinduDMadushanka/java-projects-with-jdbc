@@ -8,5 +8,6 @@ public class Main {
 
         new MainView().setVisible(true);
 
+
     }
 }

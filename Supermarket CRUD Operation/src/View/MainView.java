@@ -100,6 +100,7 @@ public class MainView extends javax.swing.JFrame {
     private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         new AddView().setVisible(true);
+        this.dispose();
     }
 
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {
