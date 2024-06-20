@@ -4,7 +4,9 @@
  */
 package View;
 
+import Controller.CustomerController;
 import Controller.ItemController;
+import Dto.CustomerDto;
 import Dto.ItemDto;
 
 import javax.swing.*;
@@ -16,12 +18,14 @@ import javax.swing.*;
 public class OrderView extends javax.swing.JFrame {
 
     private ItemController itemController;
+    private CustomerController customerController;
     /**
      * Creates new form OrderView
      */
     public OrderView() throws Exception {
         initComponents();
         itemController=new ItemController();
+        customerController=new CustomerController();
     }
 
     /**
@@ -348,6 +352,14 @@ public class OrderView extends javax.swing.JFrame {
         }catch(Exception e){
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,"error at search item !");
+        }
+    }
+
+    private void searchCustomer(){
+
+        try{
+            String customerId=txtCustomerId.getText();
+            CustomerDto customerDto=customerController
         }
 
     }
