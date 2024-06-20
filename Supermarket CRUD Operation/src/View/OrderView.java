@@ -5,6 +5,9 @@
 package View;
 
 import Controller.ItemController;
+import Dto.ItemDto;
+
+import javax.swing.*;
 
 /**
  *
@@ -329,4 +332,23 @@ public class OrderView extends javax.swing.JFrame {
     private javax.swing.JTextField txtOrderId;
     private javax.swing.JTextField txtQty;
     // End of variables declaration
+
+    private void searchItem(){
+
+        try{
+            String itemId = txtItemId.getText();
+            ItemDto itemDto=itemController.searchItem(itemId);
+
+            if(itemDto!=null){
+                lblItemDetails.setText(itemDto.getCode()+" | "+itemDto.getDescription()+" | "+itemDto.getQoh()+" | "+itemDto.getUnitPrice());
+            }else {
+                lblItemDetails.setText("Item not found");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,"error at search item !");
+        }
+
+    }
+
 }
