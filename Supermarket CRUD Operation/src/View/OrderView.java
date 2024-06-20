@@ -10,6 +10,7 @@ import Dto.CustomerDto;
 import Dto.ItemDto;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -363,7 +364,7 @@ public class OrderView extends javax.swing.JFrame {
             CustomerDto customerDto=customerController.searchCustomer(customerId);
 
             if(customerDto!=null){
-                lblCustomerDetails.setText(customerDto.getTitle()+". "+customerDto.getName()+" | "+customerDto.getId()+" | " );
+                lblCustomerDetails.setText(customerDto.getTitle()+". "+customerDto.getName()+" | "+customerDto.getId()+" | "+customerDto.getAddress() );
             }else {
                 lblCustomerDetails.setText("Customer not found");
             }
@@ -371,7 +372,17 @@ public class OrderView extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,"error at search customer !");
         }
-
     }
 
+    private void loadTable(){
+
+        String[] column={"Item Code","Qty","Discount"};
+        DefaultTableModel dtm = new DefaultTableModel(column,0){
+
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tableDetails.setModel(dtm);
+    }
 }
