@@ -260,6 +260,7 @@ public class OrderView extends javax.swing.JFrame {
 
     private void btnCustomerSearchActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        searchCustomer();
     }
 
     private void btnItemSearchActionPerformed(java.awt.event.ActionEvent evt) {
