@@ -266,4 +266,8 @@ public class RegisterView extends javax.swing.JFrame {
     private javax.swing.JTextField txtPhoneNb;
     private javax.swing.JTextField txtProvince;
     // End of variables declaration
+
+    private void saveStudent(){
+
+    }
 }
