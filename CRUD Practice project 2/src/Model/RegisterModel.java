@@ -18,6 +18,14 @@ public class RegisterModel {
         String sql="INSERT INTO details VALUES (?,?,?,?,?,?,?,?)";
 
         PreparedStatement statement  = connection.prepareStatement(sql);
+        statement.setString(1, registerDto.getFirstName());
+        statement.setString(2, registerDto.getLastName());
+        statement.setString(3, registerDto.getId());
+        statement.setString(4, registerDto.getGrade());
+        statement.setInt(5, registerDto.getAge());
+        statement.setString(6, registerDto.getDistrict());
+        statement.setString(7, registerDto.getProvince());
+        statement.setString(8, registerDto.getPhoneNumber());
 
     }
 }
