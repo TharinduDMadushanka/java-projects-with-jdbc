@@ -28,11 +28,12 @@ public class OrderView extends javax.swing.JFrame {
      * Creates new form OrderView
      */
     public OrderView() throws Exception {
+        initComponents();
         itemController=new ItemController();
         customerController=new CustomerController();
         orderDetailDtos=new ArrayList<>();
         loadTable();
-        initComponents();
+
     }
 
     /**
@@ -405,4 +406,5 @@ public class OrderView extends javax.swing.JFrame {
         DefaultTableModel dtm=(DefaultTableModel)tableDetails.getModel();
         dtm.addRow(rowDat);
     }
+
 }
