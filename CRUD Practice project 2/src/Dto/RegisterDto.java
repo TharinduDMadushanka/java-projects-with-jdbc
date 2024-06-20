@@ -89,4 +89,18 @@ public class RegisterDto {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "RegisterDto{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", id='" + id + '\'' +
+                ", grade='" + grade + '\'' +
+                ", age=" + age +
+                ", district='" + district + '\'' +
+                ", province='" + province + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }
