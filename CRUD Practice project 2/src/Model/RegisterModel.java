@@ -27,5 +27,7 @@ public class RegisterModel {
         statement.setString(7, registerDto.getProvince());
         statement.setString(8, registerDto.getPhoneNumber());
 
+        return statement.executeUpdate() >0 ? "Success" : "Fail";
+
     }
 }
