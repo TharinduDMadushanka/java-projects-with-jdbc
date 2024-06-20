@@ -231,10 +231,13 @@ public class RegisterView extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new SignView().setVisible(true);
+        this.dispose();
     }
 
     private void btnRegActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        saveStudent();
     }
 
     /**
