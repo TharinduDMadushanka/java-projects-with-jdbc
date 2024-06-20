@@ -1,11 +1,12 @@
 package Main;
 
 import View.AddView;
+import View.MainView;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        new AddView().setVisible(true);
+        new MainView().setVisible(true);
 
     }
 }
