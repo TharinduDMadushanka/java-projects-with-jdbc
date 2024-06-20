@@ -2,7 +2,7 @@ package Model;
 
 import Db.DBConnection;
 import Dto.RegisterDto;
-
+import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -16,6 +16,8 @@ public class RegisterModel {
     public String saveStudent(RegisterDto registerDto) throws Exception{
 
         String sql="INSERT INTO details VALUES (?,?,?,?,?,?,?,?)";
+
+        PreparedStatement statement  = connection.prepareStatement(sql);
 
     }
 }
