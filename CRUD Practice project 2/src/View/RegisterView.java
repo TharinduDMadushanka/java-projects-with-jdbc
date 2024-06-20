@@ -4,7 +4,12 @@
  */
 package View;
 
+import Controller.RegisterController;
 import Dto.RegisterDto;
+
+import javax.swing.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -12,11 +17,13 @@ import Dto.RegisterDto;
  */
 public class RegisterView extends javax.swing.JFrame {
 
+    private RegisterController registerController;
     /**
      * Creates new form RegisterView
      */
-    public RegisterView() {
+    public RegisterView() throws Exception {
         initComponents();
+        registerController=new RegisterController();
     }
 
     /**
@@ -274,6 +281,13 @@ public class RegisterView extends javax.swing.JFrame {
         try{
             RegisterDto dto = new RegisterDto(txtFirstName.getText(),txtLastName.getText(),txtId.getText(),txtGrade.getText(),
                     Integer.parseInt(txtAge.getText()),txtDistrict.getText(),txtProvince.getText(),txtPhoneNb.getText());
+
+            String resp =registerController.saveStudent(dto);
+            JOptionPane.showMessageDialog(this,resp);
+
+        }catch (Exception e) {
+            Logger.getLogger(RegisterView.class.getName()).log(Level.SEVERE,null,e);
+            JOptionPane.showMessageDialog(this,"Error at Registration!");
         }
 
     }
