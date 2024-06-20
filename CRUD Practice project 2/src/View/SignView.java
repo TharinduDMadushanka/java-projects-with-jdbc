@@ -63,7 +63,11 @@ public class SignView extends javax.swing.JFrame {
         btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegisterActionPerformed(evt);
+                try {
+                    btnRegisterActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -140,7 +144,7 @@ public class SignView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
         // TODO add your handling code here:
         new RegisterView().setVisible(true);
         this.dispose();
