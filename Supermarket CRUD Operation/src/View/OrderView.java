@@ -27,6 +27,7 @@ public class OrderView extends javax.swing.JFrame {
         initComponents();
         itemController=new ItemController();
         customerController=new CustomerController();
+        loadTable();
     }
 
     /**
