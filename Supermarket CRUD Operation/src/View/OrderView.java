@@ -359,7 +359,16 @@ public class OrderView extends javax.swing.JFrame {
 
         try{
             String customerId=txtCustomerId.getText();
-            CustomerDto customerDto=customerController
+            CustomerDto customerDto=customerController.searchCustomer(customerId);
+
+            if(customerDto!=null){
+                lblCustomerDetails.setText(customerDto.getTitle()+". "+customerDto.getName()+" | "+customerDto.getId()+" | " );
+            }else {
+                lblCustomerDetails.setText("Customer not found");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,"error at search customer !");
         }
 
     }
