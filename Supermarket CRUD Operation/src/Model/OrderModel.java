@@ -61,10 +61,25 @@ public class OrderModel {
                         itemUpdateStatement.setInt(1,orderDetailDto.getQty());
                         itemUpdateStatement.setString(2,orderDetailDto.getItemCode());
 
-
+                        if(itemUpdateStatement.executeUpdate()>0){
+                            isItemUpdate = false;
+                        }
                     }
 
+                    if(isItemUpdate){
+                        connection.commit();
+                        return "Success";
+                    }else {
+                        connection.rollback();
+                        return "Item update failed";
+                    }
+                }else {
+                    connection.rollback();
+                    return "Order details saved failed";
                 }
+            }else {
+                connection.rollback();
+                return "Order  not saved";
             }
 
 
