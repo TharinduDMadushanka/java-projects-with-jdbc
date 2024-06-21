@@ -31,7 +31,20 @@ public class OrderModel {
 
             boolean isOrderSaved=orderStatement.executeUpdate()>0;// true
 
+            if(isOrderSaved){
 
+                boolean isOrderDetailsSaved = true;
+
+                String orderDetailsSql="INSERT INTO orderdetail VALUES (?,?,?,?)";
+                for(OrderDetailDto orderDetailDto:orderDetails) {
+
+                    PreparedStatement orderDetailsStatement=connection.prepareStatement(orderDetailsSql);
+                    orderDetailsStatement.setString(1,orderDetailDto.getOrderId());
+                    orderDetailsStatement.setString(2,orderDetailDto.getItemCode());
+                    orderDetailsStatement.setInt(3,orderDetailDto.getQty());
+                    orderDetailsStatement.setInt(4,orderDetailDto.getDiscount());
+                }
+            }
 
 
         } catch (Exception e) {
