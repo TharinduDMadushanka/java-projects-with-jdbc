@@ -433,6 +433,8 @@ public class OrderView extends javax.swing.JFrame {
             orderDto.setDate(date);
 
             String resp=orderController.placeOrder(orderDto,orderDetailDtos);
+            JOptionPane.showMessageDialog(this,"successfully place order !");
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,"error at place order !");
