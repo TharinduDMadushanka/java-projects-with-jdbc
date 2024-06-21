@@ -13,7 +13,9 @@ import Dto.OrderDto;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -413,5 +415,18 @@ public class OrderView extends javax.swing.JFrame {
         txtQty.setText("");
         txtDiscount.setText("");
         lblItemDetails.setText("");
+    }
+
+    private void placeOrder(){
+
+        try {
+            OrderDto orderDto=new OrderDto();
+            orderDto.setOrderId(txtOrderId.getText());
+            orderDto.setCustId(txtCustomerId.getText());
+
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(new Date());
+        }
+
     }
 }
