@@ -288,6 +288,7 @@ public class OrderView extends javax.swing.JFrame {
 
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        placeOrder();
 
     }
 
