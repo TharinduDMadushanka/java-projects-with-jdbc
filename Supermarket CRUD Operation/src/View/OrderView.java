@@ -6,6 +6,7 @@ package View;
 
 import Controller.CustomerController;
 import Controller.ItemController;
+import Controller.OrderController;
 import Dto.CustomerDto;
 import Dto.ItemDto;
 import Dto.OrderDetailDto;
@@ -26,6 +27,7 @@ public class OrderView extends javax.swing.JFrame {
     private ItemController itemController;
     private CustomerController customerController;
     private ArrayList<OrderDetailDto> orderDetailDtos;
+    private OrderController orderController;
     /**
      * Creates new form OrderView
      */
@@ -34,6 +36,7 @@ public class OrderView extends javax.swing.JFrame {
         itemController=new ItemController();
         customerController=new CustomerController();
         orderDetailDtos=new ArrayList<>();
+        orderController=new OrderController();
         loadTable();
 
     }
@@ -426,6 +429,9 @@ public class OrderView extends javax.swing.JFrame {
 
             SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
             String date = sdf.format(new Date());
+            orderDto.setDate(date);
+
+            String resp=
         }
 
     }
