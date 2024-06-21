@@ -10,15 +10,18 @@ import java.util.ArrayList;
 
 public class OrderModel {
 
-//    private Connection connection;
-//
-//    public OrderModel() throws ClassNotFoundException, SQLException {
-//        connection = DBConnection.getInstance().getConnection();
-//    }
-//
-//    public String placeOrder(OrderDto orderDto, ArrayList<OrderDetailDto> orderDetails) throws Exception {
-//
-//
-//
-//    }
+    private Connection connection;
+
+    public OrderModel() throws ClassNotFoundException, SQLException {
+        connection = DBConnection.getInstance().getConnection();
+    }
+
+    public String placeOrder(OrderDto orderDto, ArrayList<OrderDetailDto> orderDetails) throws Exception {
+
+        try {
+            connection.setAutoCommit(false); // disable auto save
+        }
+
+    }
+
 }
