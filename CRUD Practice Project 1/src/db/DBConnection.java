@@ -8,17 +8,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author ASUS
- */
+
 public class DBConnection {
     private static DBConnection dBConnection;
     private Connection connection;
     
     private DBConnection() throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project1", "root", "Thariya920@");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project1", "username", "password");
     }
     
     public static DBConnection getInstance() throws ClassNotFoundException, SQLException{
